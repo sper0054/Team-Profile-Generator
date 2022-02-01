@@ -118,7 +118,7 @@ function addEngineer() {
             finalTeamArray.push(teamMember);
             addTeamMembers();
         });
-}
+};
 
 function addIntern() {
     inquirer.prompt([
@@ -154,21 +154,12 @@ function addIntern() {
         });
 };
 
-//HERE--------------------------------------------------------------------------
-
 function generateHtml(finalTeamArray) {
     return `./dist/${finalTeamArray[0].toLowerCase().split(' ').join('-')}.html`
-}
-
-function generateTitle(finalTeamArray) {
-    return finalTeamArray[0].replace(/\w\S*/g, txt => {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
-}
+};
 
 function compileTeam() {
     console.log('You have successfully created your team site');
-
     const htmlArray = [];
     const htmlBeginning = `
     <!DOCTYPE html>
@@ -178,8 +169,9 @@ function compileTeam() {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <link href="./style.css" rel="stylesheet">
-            <title>${generateTitle(finalTeamArray)}</title>
+            <title>${teamName}</title>
         </head>
+
         <body>
             <div class="header">
                 <h1>${finalTeamArray[0]}</h1>
@@ -243,6 +235,6 @@ function compileTeam() {
             throw err;
         }
     })
-}
+};
 
 startingPrompt();
