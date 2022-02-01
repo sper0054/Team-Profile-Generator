@@ -8,7 +8,7 @@ const Intern = require("./lib/Intern");
 let finalTeamArray = [];
 
 function startingPrompt() {
-    inquirer.prompt([
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'teamname',
@@ -23,7 +23,7 @@ function startingPrompt() {
 }
 
 function addManager() {
-    inquirer.prompt([
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -57,7 +57,7 @@ function addManager() {
 }
 
 function addTeamMembers() {
-    inquirer.prompt([
+    return inquirer.prompt([
         {
             type: 'list',
             name: 'addMemberData',
@@ -82,7 +82,7 @@ function addTeamMembers() {
 }
 
 function addEngineer() {
-    inquirer.prompt([
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -116,7 +116,7 @@ function addEngineer() {
 }
 
 function addIntern() {
-    inquirer.prompt([
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
