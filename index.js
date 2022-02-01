@@ -18,7 +18,7 @@ function startingPrompt() {
             const teamName = data.teamname;
             finalTeamArray.push(teamName);
             addManager();
-        })
+        });
 };
 
 function addManager() {
@@ -27,13 +27,6 @@ function addManager() {
             type: 'input',
             name: 'name',
             message: "What is the team manager's name?",
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    return "Please enter the manager's name";
-                }
-            }
         },
         {
             type: 'input',
@@ -156,7 +149,7 @@ function addIntern() {
 
 function generateHtml(finalTeamArray) {
     return `./dist/${finalTeamArray[0].toLowerCase().split(' ').join('-')}.html`
-}
+};
 
 function compileTeam() {
     console.log('You have created a team site');
@@ -234,7 +227,7 @@ function compileTeam() {
         if (err) {
             throw err;
         }
-    })
-}
+    });
+};
 
 startingPrompt();
