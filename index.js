@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const style = require("./src/style");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
@@ -18,8 +19,8 @@ function startingPrompt() {
             const teamName = data.teamname;
             finalTeamArray.push(teamName);
             addManager();
-        });
-};
+        })
+}
 
 function addManager() {
     inquirer.prompt([
@@ -40,7 +41,7 @@ function addManager() {
         },
         {
             type: 'input',
-            name: 'office',
+            name: 'officeNumber',
             message: "What is the team manager's office number?",
         },
     ])
@@ -48,12 +49,12 @@ function addManager() {
             const name = data.name;
             const id = data.id;
             const email = data.email;
-            const office = data.office;
-            const teamMember = new Manager(name, id, email, office);
+            const officeNumber = data.officeNumber;
+            const teamMember = new Manager(name, id, email, officeNumber);
             finalTeamArray.push(teamMember);
             addTeamMembers();
         });
-};
+}
 
 function addTeamMembers() {
     inquirer.prompt([
@@ -66,18 +67,19 @@ function addTeamMembers() {
     ])
         .then(data => {
             switch (data.addMemberData) {
-                case 'Yes, an engineer':
+                case "Yes, an engineer":
                     addEngineer();
                     break;
-                case 'Yes, an intern':
+
+                case "Yes, an intern":
                     addIntern();
                     break;
-                case 'No':
+                case "No":
                     compileTeam();
                     break;
             }
         });
-};
+}
 
 function addEngineer() {
     inquirer.prompt([
@@ -111,7 +113,7 @@ function addEngineer() {
             finalTeamArray.push(teamMember);
             addTeamMembers();
         });
-};
+}
 
 function addIntern() {
     inquirer.prompt([
@@ -145,14 +147,20 @@ function addIntern() {
             finalTeamArray.push(teamMember);
             addTeamMembers()
         });
-};
+}
 
 function generateHtml(finalTeamArray) {
     return `./dist/${finalTeamArray[0].toLowerCase().split(' ').join('-')}.html`
-};
+}
+
+function generateTitle(finalTeamArray) {
+    return finalTeamArray[0].replace(/\w\S*/g, txt => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
 
 function compileTeam() {
-    console.log('You have created a team site');
+    console.log("Wonderful! You have now successfully created your team's profile");
 
     const htmlArray = [];
     const htmlBeginning = `
@@ -162,12 +170,12 @@ function compileTeam() {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Team Profile Generator</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-            <link href="https://fronts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="style.css">
+            <title>${generateTitle(finalTeamArray)}</title>
+            <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+            <style>
+             ${style}
+            </style>
         </head>
-
         <body>
             <div class="banner-bar">
                 <h1>${finalTeamArray[0]}</h1>
@@ -227,7 +235,7 @@ function compileTeam() {
         if (err) {
             throw err;
         }
-    });
-};
+    })
+}
 
 startingPrompt();
