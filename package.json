@@ -1,0 +1,22 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sper0054/Team-Profile-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sper0054/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/sper0054/Team-Profile-Generator#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}
