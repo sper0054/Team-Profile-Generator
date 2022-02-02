@@ -8,9 +8,10 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.banner-bar {
-    background-color: rgba(217, 117, 104, 0.842);
+.header {
+    background-color: rgba(250, 128, 114);
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -18,16 +19,16 @@ body {
     height: 20vh;
 }
 h1 {
-    font-family: Bebas Neue;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 8vw;
 }
 p {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     position: relative;
     left: 12px;
 }
 h2 {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     position: relative;
     font-size: 17px;
     left: 12px;
@@ -49,8 +50,8 @@ h2 {
     width: 60vw;
 }
 .card-top {
-    background-color: rgb(98, 165, 189);
-    border: 2px solid rgb(98, 165, 189);
+    background-color: rgb(102, 233, 242);
+    border: 2px solid rgb(102, 233, 242);
     width: 246px;
     border-top-left-radius: 10px;
 }

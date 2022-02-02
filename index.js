@@ -171,13 +171,12 @@ function compileTeam() {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>${generateTitle(finalTeamArray)}</title>
-            <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
             <style>
              ${style}
             </style>
         </head>
         <body>
-            <div class="banner-bar">
+            <div class="header">
                 <h1>${finalTeamArray[0]}</h1>
             </div>
             <div class="card-container">
