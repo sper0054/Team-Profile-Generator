@@ -4,6 +4,7 @@
 Using command line prompts to answer questions about a team, a HTML file is generated. Built with HTMl, CSS, Javascript, Node.js.
   
 ## How it looks & works
+![Video](https://github.com/sper0054/Team-Profile-Generator/blob/main/Screen%20Recording.mov)
 ![ScreenShot](https://github.com/sper0054/Team-Profile-Generator/blob/main/Screen%20Shot%20.png)
 
 ## Table of Contents
